@@ -1,7 +1,8 @@
-
+# %%
 import re
 
-def filter_urls(input_file_path, regex_pattern, output_file_path):
+# %%
+def extract_sitemap(input_file_path, regex_pattern, output_file_path):
     # Read the content of the input file
     with open(input_file_path, 'r') as file:
         content = file.read()
@@ -16,3 +17,19 @@ def filter_urls(input_file_path, regex_pattern, output_file_path):
     return output_file_path
 
 
+
+
+# %%
+regex_pattern_studierenwerk=r"https:\/\/www\.studierendenwerk-muenchen-oberbayern\.de?/[a-zA-Z0-9\-\/]+"
+regex_pattern_thRo=r"https:\/\/www\.th-rosenheim\.de?/[a-zA-Z0-9\-\/]+"
+
+studierenwerk_raw='studierenwerk_raw.txt'
+thRo_raw='thRo_raw_xml.txt'
+
+studierenwerk_sitemap='studierenwerk_sitemap.txt'
+thRo_sitemap='thRo_sitemap.txt'
+
+# %%
+
+studierenwerk_sitemap=extract_sitemap(studierenwerk_raw,regex_pattern_studierenwerk,studierenwerk_sitemap)
+thRo_sitemap=extract_sitemap(thRo_raw,regex_pattern_thRo,thRo_sitemap)

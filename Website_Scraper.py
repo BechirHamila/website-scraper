@@ -1,4 +1,4 @@
-Web_Scraper
+
 # %%
 import requests
 from bs4 import BeautifulSoup
@@ -50,7 +50,9 @@ def scrape(filename,scraped_filename):
 
 
 # %%
-raw_studierenwerk="C:\\Users\\Bechir Hamila\\studierenwerk_sitemap.txt"
-scrape(raw_studierenwerk,'studierenwerk_scraped.txt')
+raw_studierenwerk='studierenwerk_files\\studierenwerk_sitemap.txt'
+scrape(raw_studierenwerk,'studierenwerk_files\\studierenwerk_scraped.txt')
+
 # %%
-raw
+thRo_raw='thRo_files\\thRo_sitemap.txt'
+scrape(thRo_raw,'thRo_files\\thRo_scraped.txt')
